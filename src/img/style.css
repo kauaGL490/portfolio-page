@@ -1,0 +1,604 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    
+}
+
+.front{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* Estilo Geral */
+header {
+    padding: 40px 4%;
+}
+
+header > .front {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Classe que aplica a animação de fade-in */
+.animate {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+  }
+  
+  .animate.fadeIn {
+    opacity: 1;
+  }
+  
+  /* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal img {
+    margin: 5% auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80%;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: rgb(12, 62, 228);
+    color: #fff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+h2.tit{
+    color: white;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.tit span{
+    color:#0703d8;
+}
+
+button:hover, form .btn-enviar input:hover{
+    box-shadow: 0px 0px 8px #2e01f7;
+    transform: scale(1.05);
+}
+
+/* Efeito typing aplicado apenas aos links do menu */
+header nav.menu-pc a.typing-effect {
+    color: #504e4e;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid orange; 
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Animação typing para simular o efeito de digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Animação blink-caret para simular o cursor piscando */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(12, 62, 228); }
+}
+
+/* Efeito de underline ao passar o mouse */
+header nav.menu-pc a.typing-effect::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(12, 62, 228);
+    transition: width 0.3s;
+}
+
+header nav.menu-pc a.typing-effect:hover::after {
+    width: 100%;
+}
+
+/* Estilo para o menu horizontal */
+header  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinha os itens horizontalmente */
+    gap: 20px; /* Espaçamento entre itens do menu */
+}
+
+header nav.menu-pc li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/*ESTILO  DO TOPO DO SITE*/
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site h1 span{
+    color:#0703d8;
+}
+
+.topo-do-site .text-topo-site p{
+    color: #a3a0a0;
+    margin: 40px 0px;
+}
+
+.topo-do-site .img-topo-front img{
+    position: relative;
+    height: 100%; /* Ajusta a altura da imagem */
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+/* ESTILO DA ESPECIALIDADES */
+
+/* Container de habilidades */
+.section .skill {
+    padding: 40px 4%;
+    margin-top: 90px; /* Ajuste de espaçamento superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px; /* Limita a largura máxima */
+    margin-left: auto; /* Centraliza na tela */
+    margin-right: auto; /* Centraliza na tela */
+    width: 100%; /* Garante que ocupe 100% do espaço até o max-width */
+}
+
+/* Flexbox para alinhar as caixas de habilidades */
+.skill.flex {
+    gap: 60px;
+    flex-wrap: wrap; /* Permite que as caixas se ajustem em várias linhas em telas menores */
+    justify-content: center; /* Centraliza as caixas horizontalmente */
+}
+
+/* Estilos das caixas de habilidades */
+.skill .skill-box {
+    color: #fff;
+    padding: 40px;
+    margin-top: 45px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    min-height: 200px; /* Garantir uma altura mínima para a caixa */
+}
+
+.skill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza as caixas */
+    padding: 20px; /* Espaçamento adicional ao redor das caixas */
+}
+
+.skill .skill-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgb(78, 78, 78);
+}
+
+.skill .skill-box i{
+    font-size: 70px;
+    color: #0703d8;
+    padding: 40px;
+}
+
+.skill .skill-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE */
+
+section.sobre{
+    padding: 40px 4%;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #0703d8;
+    display: block;
+}
+
+.sobre .txt-sobre p{
+    margin: 20px 0px;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social {
+    display: flex; /* Alinha os itens lado a lado */
+    gap: 10px; /* Espaçamento entre os botões */
+    justify-content: center; /* Alinha os botões horizontalmente no centro */
+}
+
+.sobre .txt-sobre .btn-social a {
+    display: flex; /* Flexbox para centralizar o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    border-radius: 50%; /* Forma circular */
+    background-color: #0703d8; /* Cor de fundo */
+    color: #fff; /* Cor do ícone */
+    text-decoration: none; /* Remove sublinhado do link */
+    font-size: 20px; /* Tamanho do ícone */
+    cursor: pointer; /* Mostra o cursor de clique */
+    border: none; /* Remove borda */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições */
+    outline: none;
+}
+
+.sobre .txt-sobre .btn-social a:hover {
+    background-color: #050377; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Efeito de ampliação */
+}
+
+button {
+    all: unset; /* Remove todos os estilos padrão */
+    display: flex; /* Permite alinhamento central */
+    align-items: center;
+    justify-content: center;
+    border: none; /* Remove bordas */
+    background: transparent; /* Remove fundo padrão */
+}
+
+/* ESTILO DE PORTFÓLIO */
+
+section.portfolio{
+    padding: 80px 4%;
+    box-shadow: 0  0 40px 10px #ffffff41; 
+}
+
+section.portfolio .flex{
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.img1{
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+.img1:hover{
+    background-position: 100% 100%;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-color: #0905ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header > .front {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img1 {
+        width: 100%;
+        height: auto;
+    }
+
+    .skill .skill-box {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+/* ESTILO DO FORMULARIO */
+section.formulario{
+    padding: 80px 4%;
+}
+
+form{
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input,form textarea{
+    width: 100%;
+    background-color: #242424;
+    border: none;
+    outline: none;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+    transition: 2s;
+
+}
+
+form textarea{
+    resize: none;
+    max-height: 400px;
+}
+
+/* Estilo para a mudança de cor ao passar o mouse */
+form input:hover {
+    color: #050377; /* Cor do texto */
+    background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+    border-color: #050377; /* Cor da borda */
+}
+
+/* Estilo para o foco do input */
+form input:focus {
+    color: #050377; /* Cor do texto quando o input é focado */
+    background-color: #fff; /* Cor de fundo quando o input é focado */
+    border-color: #050377; /* Cor da borda quando o input é focado */
+    outline: none; /* Remove o contorno padrão */
+}
+
+form .btn-enviar{
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 120px;
+    background-color: #0703d8;
+    color: floralwhite;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.img-sobre img {
+    width: 500px;  /* Define a largura da imagem */
+    height: 400px; /* Define a altura da imagem */
+    object-fit: cover; /* Isso garante que a imagem se ajuste sem distorcer */
+    border-radius: 50%;
+  }
+  
+
+  @media screen and (max-width: 1020px){
+    /* CLASSES GERAIS */
+    .flex{
+        flex-direction: column;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    h2.tit{
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* TOPO DO SITE */
+
+
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+    
+    .topo-do-site .img-topo-front img{
+    height: 10%; 
+    }
+
+    section.topo-do-site .flex{
+        gap: 40px;
+    }
+    
+    .img-sobre img{
+        width: 300PX; 
+        height: 300PX;
+        }
+
+    h2.tit{
+        font-size: 34px;
+        line-height: 30px;
+    }
+
+    /* ESPECILIDADE */
+    .section .skill {
+        padding: 40px 8%;
+    }
+
+    /* ESTILO DO SOBRE */
+
+    section.sobre{
+        padding: 80px 8%;
+    }
+
+    .sobre .txt-sobre h2 {
+        font-size: 34px;
+        line-height: 35px;
+        text-align:center ;
+    }
+
+    /* POETFÓLIO */
+
+    section.portfolio{
+        padding: 80px 8%;
+        
+    }
+
+    .img1{
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    section.sobre .flex{
+        gap: 60px;
+    }
+
+    /* CABEÇALHO */
+    .menu-pc, .btn-contato{
+        display: none;
+    }
+  }
+
+  /* Rodapé */
+
+  /* Estilo Geral do Rodapé */
+.footer {
+    text-align: center; /* Centraliza o texto */
+    padding: 40px 20px; /* Espaçamento interno */
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: column; /* Alinha em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaçamento entre elementos */
+}
+
+.footer__title {
+    margin-bottom: 10px; /* Espaçamento entre o título e os links */
+}
+
+.footer__links {
+    list-style: none; /* Remove marcadores */
+    padding: 0; /* Remove espaçamento interno */
+}
+
+.footer__link {
+    display: inline-block;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.footer__social-link i {
+    font-size: 24px; /* Tamanho dos ícones */
+    transition: color 0.3s; /* Efeito suave no hover */
+}
+
+.footer__social-link:hover i {
+    color: #007bff; /* Cor no hover */
+}
+
+.footer__copy {
+    margin-top: 20px; /* Espaçamento acima do texto de copyright */
+    font-size: 14px; /* Tamanho da fonte menor */
+    color: #6c757d; /* Cor suave */
+}
